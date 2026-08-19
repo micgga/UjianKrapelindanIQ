@@ -260,7 +260,7 @@
             残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
-        <!-- Tabel Kraepelin dengan Auto-Scroll Diperlambat -->
+        <!-- Tabel Kraepelin dengan Auto-Scroll Diperlambat (1.5 detik) -->
         <div class="kraepelin-fixed-container" id="kraepelinContainer">
             <table class="paten-table" id="patenKraepelinTable">
                 <thead>
@@ -449,16 +449,15 @@
                     input.className = 'paten-input';
                     input.id = `ans_${col}_${i}`;
                     
-                    // Fungsionalitas Pindah Otomatis Diperlambat (800ms) untuk mengakomodasi 2 digit angka
+                    // Navigasi pindah otomatis KE BAWAH diperlambat menjadi 1500ms (1.5 detik)
                     input.addEventListener('input', function() {
                         if (this.value.length >= 1) {
                             setTimeout(() => {
-                                let allInputs = document.querySelectorAll('.paten-input');
-                                let currentIndex = Array.from(allInputs).indexOf(this);
-                                if (currentIndex !== -1 && currentIndex < allInputs.length - 1) {
-                                    allInputs[currentIndex + 1].focus();
+                                let nextInput = document.getElementById(`ans_${col}_${i + 1}`);
+                                if (nextInput) {
+                                    nextInput.focus();
                                 }
-                            }, 800); // Penundaan 800ms (0.8 detik)
+                            }, 1500); // Jeda 1500ms (1.5 detik)
                         }
                     });
 
