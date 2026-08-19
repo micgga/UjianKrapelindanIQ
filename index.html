@@ -10,22 +10,22 @@
             background-color: #f0f2f5;
             color: #333;
             margin: 0;
-            padding: 5px;
-            font-size: 13px;
+            padding: 4px;
+            font-size: 12px;
         }
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             background: #fff;
-            padding: 10px;
+            padding: 8px 12px;
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         h2 {
             text-align: center;
             color: #2c3e50;
-            margin: 5px 0;
-            font-size: 1.2em;
+            margin: 4px 0;
+            font-size: 1.1em;
         }
         .bilingual-text {
             margin-bottom: 2px;
@@ -33,24 +33,24 @@
         .jp-text {
             font-weight: bold;
             color: #1a237e;
-            font-size: 0.85em;
+            font-size: 0.8em;
         }
         .id-text {
             color: #424242;
-            font-size: 0.8em;
+            font-size: 0.75em;
             display: inline;
         }
         .instructions {
             background: #e9f5ff;
-            padding: 6px 10px;
+            padding: 4px 8px;
             border-left: 4px solid #2196F3;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             border-radius: 3px;
         }
         .form-row {
             display: flex;
-            gap: 10px;
-            margin-bottom: 5px;
+            gap: 8px;
+            margin-bottom: 4px;
         }
         .form-group {
             flex: 1;
@@ -58,103 +58,110 @@
         .form-group label {
             display: block;
             font-weight: bold;
-            font-size: 0.85em;
-            margin-bottom: 2px;
+            font-size: 0.8em;
+            margin-bottom: 1px;
         }
         .form-group input {
             width: 100%;
-            padding: 4px;
+            padding: 3px 6px;
             border: 1px solid #ccc;
             border-radius: 3px;
-            font-size: 0.9em;
+            font-size: 0.85em;
             box-sizing: border-box;
         }
         .candidate-info-box {
             background: #fff3e0;
-            padding: 6px 10px;
+            padding: 5px 8px;
             border: 1px solid #ffe0b2;
             border-radius: 4px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .timer-container {
             text-align: center;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: bold;
             color: #d32f2f;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             background: #ffebee;
-            padding: 4px;
-            border-radius: 4px;
+            padding: 3px;
+            border-radius: 3px;
         }
         
-        /* TABLE KRAEPELIN COMPACT 1 HALAMAN */
-        .kraepelin-table-container {
+        /* TABEL PATEN KRAEPELIN 1 HALAMAN */
+        .kraepelin-fixed-container {
             width: 100%;
             overflow-x: auto;
-            max-height: 70vh; /* Memastikan tidak lewat layar */
         }
-        .k-table {
+        .paten-table {
             width: 100%;
             border-collapse: collapse;
-            text-align: center;
             table-layout: fixed;
+            text-align: center;
         }
-        .k-table th, .k-table td {
-            border: 1px solid #ddd;
-            padding: 1px 2px;
+        .paten-table th {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            font-size: 0.75em;
+            padding: 2px;
+            border: 1px solid #b0bec5;
+        }
+        .paten-table td {
+            border: 1px solid #cfd8dc;
+            padding: 1px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        /* Baris angka asli */
+        .paten-num {
+            background-color: #f5f5f5;
+            font-weight: bold;
+            color: #263238;
             font-size: 0.85em;
         }
-        .k-table th {
-            background-color: #f5f5f5;
-            font-size: 0.8em;
-            padding: 3px 0;
+        /* Baris kotak input jawaban di antara angka */
+        .paten-input-cell {
+            background-color: #ffffff;
         }
-        .k-input {
-            width: 95%;
-            height: 18px;
+        .paten-input {
+            width: 96%;
+            height: 15px;
             padding: 0;
             text-align: center;
-            font-size: 0.85em;
-            border: 1px solid #b0bec5;
+            font-size: 0.8em;
+            border: 1px solid #90a4ae;
             border-radius: 2px;
             background-color: #fafafa;
             -moz-appearance: textfield;
         }
-        .k-input:focus {
+        .paten-input:focus {
             background-color: #fff;
             border-color: #2196F3;
             outline: none;
         }
-        .k-input::-webkit-outer-spin-button,
-        .k-input::-webkit-inner-spin-button {
+        .paten-input::-webkit-outer-spin-button,
+        .paten-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
-        }
-        .num-cell {
-            font-weight: bold;
-            color: #333;
-            background-color: #f9f9f9;
-            height: 16px;
         }
 
         /* Style IQ Test */
         .iq-question {
-            margin-bottom: 10px;
-            padding-bottom: 6px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
             border-bottom: 1px dashed #ccc;
         }
         .iq-question p {
             font-weight: bold;
-            margin: 0 0 4px 0;
-            font-size: 0.9em;
+            margin: 0 0 3px 0;
+            font-size: 0.85em;
         }
         .options label {
             display: inline-block;
-            margin-right: 15px;
+            margin-right: 12px;
             cursor: pointer;
-            font-size: 0.85em;
+            font-size: 0.8em;
             background: #f9f9f9;
-            padding: 2px 6px;
+            padding: 2px 5px;
             border: 1px solid #eee;
             border-radius: 3px;
         }
@@ -162,15 +169,15 @@
         .btn {
             display: block;
             width: 100%;
-            padding: 8px;
+            padding: 7px;
             background: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
-            font-size: 0.95em;
+            font-size: 0.9em;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .btn:hover { background: #45a049; }
         .btn-finish { background: #f44336; }
@@ -180,19 +187,19 @@
         
         .result-box {
             background: #f8f9fa;
-            padding: 10px;
+            padding: 8px;
             border-radius: 4px;
             border: 1px solid #dee2e6;
-            margin-top: 8px;
+            margin-top: 6px;
             text-align: left;
         }
         .eval-badge {
             display: inline-block;
-            padding: 2px 6px;
+            padding: 2px 5px;
             border-radius: 3px;
             color: white;
             font-weight: bold;
-            font-size: 0.8em;
+            font-size: 0.75em;
         }
         .eval-A { background: #4CAF50; }
         .eval-B { background: #FF9800; }
@@ -233,13 +240,13 @@
         <button class="btn" onclick="startKraepelin()">テストを開始する (Mulai Tes)</button>
     </div>
 
-    <!-- SECTION 1: KRAEPELIN (TABLE FORMAT) -->
+    <!-- SECTION 1: KRAEPELIN (TABEL PATEN) -->
     <div id="section-kraepelin">
         <h2>① クレペリン検査 (Kraepelin Test)</h2>
-        <div class="instructions" style="padding: 4px 8px; margin-bottom: 5px;">
+        <div class="instructions" style="padding: 3px 6px; margin-bottom: 4px;">
             <div class="bilingual-text">
                 <span class="jp-text">・上と下を足して間に書く。上から下へ。消しゴム不可。合計も記入。</span>
-                <span class="id-text">Jumlahkan angka atas & bawah, tulis di tengah. Kerjakan dari atas ke bawah.</span>
+                <span class="id-text">Jumlahkan angka atas & bawah, tulis di tengah. Dari atas ke bawah. Tanpa hapus.</span>
             </div>
         </div>
         
@@ -247,16 +254,16 @@
             残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
-        <!-- Tabel Kraepelin 1 Halaman -->
-        <div class="kraepelin-table-container">
-            <table class="k-table" id="kraepelinTable">
+        <!-- Tabel Paten Kraepelin -->
+        <div class="kraepelin-fixed-container">
+            <table class="paten-table" id="patenKraepelinTable">
                 <thead>
                     <tr>
-                        <th>列1</th><th>列2</th><th>列3</th><th>列4</th><th>列5</th><th>列6</th>
+                        <th>列 1</th><th>列 2</th><th>列 3</th><th>列 4</th><th>列 5</th><th>列 6</th>
                     </tr>
                 </thead>
-                <tbody id="kTableBody">
-                    <!-- Diisi lewat JavaScript secara dinamis & acak -->
+                <tbody id="patenTableBody">
+                    <!-- Diisi lewat JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -267,7 +274,7 @@
     <!-- SECTION 2: IQ TEST -->
     <div id="section-iq">
         <h2>② 簡単な知能テスト (Tes IQ)</h2>
-        <div class="instructions">
+        <div class="instructions" style="padding: 3px 6px; margin-bottom: 4px;">
             <div class="bilingual-text">
                 <span class="jp-text">・各問題に1つずつ答えてください。</span>
                 <span class="id-text">Jawab satu pilihan untuk setiap soal.</span>
@@ -279,7 +286,6 @@
         </div>
 
         <div id="iq-questions-container">
-            <!-- Soal 1-10 -->
             <div class="iq-question"><p>問 1. 25 ＋ 38 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q1" value="ア"> ア) 53</label>
@@ -369,12 +375,12 @@
     <div id="section-result">
         <h2>テスト終了 (Tes Selesai)</h2>
         <div class="candidate-info-box">
-            <p style="margin:0 0 3px 0;"><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
+            <p style="margin:0 0 2px 0;"><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
             <p style="margin:0;"><strong>受験番号 / No. Ujian:</strong> <span id="resNumber"></span></p>
         </div>
         <div class="result-box" id="result-kraepelin"></div>
         <div class="result-box" id="result-iq"></div>
-        <p style="text-align:center; margin-top:10px; font-size: 0.85em; color: #666;">面接官にこの画面を見せてください。</p>
+        <p style="text-align:center; margin-top:8px; font-size: 0.8em; color: #666;">面接官にこの画面を見せてください。</p>
     </div>
 
 </div>
@@ -409,44 +415,45 @@
         return shuffled;
     }
 
-    function generateKraepelinTable() {
-        const tbody = document.getElementById('kTableBody');
+    function generatePatenTable() {
+        const tbody = document.getElementById('patenTableBody');
         tbody.innerHTML = '';
         randomizedColumnsData = [];
 
         let shuffledCols = columnsData.map(col => shuffleArray(col));
         randomizedColumnsData = shuffledCols;
 
-        // Total ada 20 baris angka per kolom, dan 19 baris kotak jawaban di antaranya.
+        // Membuat struktur baris selang-seling antara Angka Asli dan Input Jawaban
         for (let i = 0; i < 20; i++) {
-            let tr = document.createElement('tr');
-            
+            // Baris Angka Asli
+            let trNum = document.createElement('tr');
             for (let col = 0; col < 6; col++) {
-                // Kolom Angka Asli
                 let tdNum = document.createElement('td');
-                tdNum.className = 'num-cell';
+                tdNum.className = 'paten-num';
                 tdNum.innerText = shuffledCols[col][i];
-                tr.appendChild(tdNum);
+                trNum.appendChild(tdNum);
             }
-            tbody.appendChild(tr);
+            tbody.appendChild(trNum);
 
-            // Jika belum baris terakhir, buat baris kotak input jawaban di bawahnya
+            // Baris Kotak Input Jawaban (di antara angka, total 19 baris)
             if (i < 19) {
                 let trInput = document.createElement('tr');
                 for (let col = 0; col < 6; col++) {
                     let tdInput = document.createElement('td');
-                    tdInput.innerHTML = `<input type="number" class="k-input" id="ans_${col}_${i}">`;
+                    tdInput.className = 'paten-input-cell';
+                    tdInput.innerHTML = `<input type="number" class="paten-input" id="ans_${col}_${i}">`;
                     trInput.appendChild(tdInput);
                 }
                 tbody.appendChild(trInput);
             }
         }
 
-        // Baris terakhir untuk Total (合計)
+        // Baris Terakhir untuk Total (合計)
         let trTotal = document.createElement('tr');
         for (let col = 0; col < 6; col++) {
             let tdTotal = document.createElement('td');
-            tdTotal.innerHTML = `<input type="number" class="k-input" id="total_${col}" placeholder="Total" style="background:#fff3e0;">`;
+            tdTotal.style.backgroundColor = '#fff3e0';
+            tdTotal.innerHTML = `<input type="number" class="paten-input" id="total_${col}" placeholder="Total" style="background:#fff3e0; font-weight:bold;">`;
             trTotal.appendChild(tdTotal);
         }
         tbody.appendChild(trTotal);
@@ -457,7 +464,7 @@
         const cNumber = document.getElementById('candidateNumber').value.trim();
         
         if(cName === "" || cNumber === "") {
-            alert("氏名と受験番号を入力してください！");
+            alert("氏名と受験番号を入力してください！\n(Harap isi Nama dan Nomor Ujian terlebih dahulu!)");
             return;
         }
 
@@ -468,7 +475,7 @@
         document.getElementById('section-kraepelin').style.display = 'block';
         
         window.scrollTo(0, 0);
-        generateKraepelinTable();
+        generatePatenTable();
         
         timerKraepelin = setInterval(() => {
             timeK--;
