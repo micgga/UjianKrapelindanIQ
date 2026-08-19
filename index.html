@@ -10,182 +10,189 @@
             background-color: #f0f2f5;
             color: #333;
             margin: 0;
-            padding: 10px;
-            line-height: 1.4;
+            padding: 5px;
+            font-size: 13px;
         }
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        h1, h2, h3 {
+        h2 {
             text-align: center;
             color: #2c3e50;
-            margin-top: 0;
+            margin: 5px 0;
+            font-size: 1.2em;
         }
         .bilingual-text {
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
         .jp-text {
             font-weight: bold;
             color: #1a237e;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
         .id-text {
             color: #424242;
-            font-size: 0.85em;
-            margin-bottom: 8px;
-            display: block;
+            font-size: 0.8em;
+            display: inline;
         }
         .instructions {
             background: #e9f5ff;
-            padding: 10px 15px;
-            border-left: 5px solid #2196F3;
-            margin-bottom: 15px;
-            border-radius: 4px;
+            padding: 6px 10px;
+            border-left: 4px solid #2196F3;
+            margin-bottom: 8px;
+            border-radius: 3px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 5px;
         }
         .form-group {
-            margin-bottom: 10px;
+            flex: 1;
         }
         .form-group label {
             display: block;
             font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            margin-bottom: 2px;
         }
         .form-group input {
             width: 100%;
-            padding: 8px;
+            padding: 4px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+            border-radius: 3px;
             font-size: 0.9em;
+            box-sizing: border-box;
         }
         .candidate-info-box {
             background: #fff3e0;
-            padding: 10px 15px;
+            padding: 6px 10px;
             border: 1px solid #ffe0b2;
-            border-radius: 5px;
-            margin-bottom: 15px;
+            border-radius: 4px;
+            margin-bottom: 8px;
         }
         .timer-container {
             text-align: center;
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: bold;
             color: #d32f2f;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             background: #ffebee;
-            padding: 8px;
-            border-radius: 5px;
+            padding: 4px;
+            border-radius: 4px;
         }
         
-        /* STYLE KRAEPELIN - COMPACT MODE UNTUK 1 LAYAR */
-        .test-area-kraepelin {
-            overflow-x: auto;
-            white-space: nowrap;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-        .column {
-            display: inline-block;
-            vertical-align: top;
-            width: 45px; /* Dibuat lebih ramping */
-            margin-right: 8px;
-            text-align: center;
-        }
-        .number {
-            font-size: 0.95em;
-            font-weight: bold;
-            padding: 0;
-            line-height: 1.1;
-        }
-        .answer-input, .total-input {
+        /* TABLE KRAEPELIN COMPACT 1 HALAMAN */
+        .kraepelin-table-container {
             width: 100%;
-            padding: 1px;
-            text-align: center;
-            font-size: 0.9em;
-            border: 1px solid #999;
-            border-radius: 3px;
-            margin: 1px 0;
-            height: 20px; /* Tinggi kotak diturunkan drastis agar tidak perlu scroll */
-            -moz-appearance: textfield;
-            background-color: #fafafa;
+            overflow-x: auto;
+            max-height: 70vh; /* Memastikan tidak lewat layar */
         }
-        .answer-input:focus {
+        .k-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+        }
+        .k-table th, .k-table td {
+            border: 1px solid #ddd;
+            padding: 1px 2px;
+            font-size: 0.85em;
+        }
+        .k-table th {
+            background-color: #f5f5f5;
+            font-size: 0.8em;
+            padding: 3px 0;
+        }
+        .k-input {
+            width: 95%;
+            height: 18px;
+            padding: 0;
+            text-align: center;
+            font-size: 0.85em;
+            border: 1px solid #b0bec5;
+            border-radius: 2px;
+            background-color: #fafafa;
+            -moz-appearance: textfield;
+        }
+        .k-input:focus {
             background-color: #fff;
             border-color: #2196F3;
             outline: none;
         }
-        .answer-input::-webkit-outer-spin-button,
-        .answer-input::-webkit-inner-spin-button {
+        .k-input::-webkit-outer-spin-button,
+        .k-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
-        
+        .num-cell {
+            font-weight: bold;
+            color: #333;
+            background-color: #f9f9f9;
+            height: 16px;
+        }
+
         /* Style IQ Test */
         .iq-question {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
             border-bottom: 1px dashed #ccc;
         }
         .iq-question p {
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-        .options label {
-            display: block;
-            margin-bottom: 5px;
-            cursor: pointer;
-            background: #f9f9f9;
-            padding: 6px 10px;
-            border-radius: 4px;
-            border: 1px solid #eee;
+            margin: 0 0 4px 0;
             font-size: 0.9em;
         }
-        .options label:hover {
-            background: #f1f1f1;
+        .options label {
+            display: inline-block;
+            margin-right: 15px;
+            cursor: pointer;
+            font-size: 0.85em;
+            background: #f9f9f9;
+            padding: 2px 6px;
+            border: 1px solid #eee;
+            border-radius: 3px;
         }
+        
         .btn {
             display: block;
             width: 100%;
-            padding: 12px;
+            padding: 8px;
             background: #4CAF50;
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 4px;
+            font-size: 0.95em;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .btn:hover { background: #45a049; }
         .btn-finish { background: #f44336; }
-        .btn-finish:hover { background: #da190b; }
         .btn-next { background: #2196F3; }
-        .btn-next:hover { background: #1976d2; }
         
         #section-kraepelin, #section-iq, #section-result { display: none; }
         
         .result-box {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 4px;
             border: 1px solid #dee2e6;
-            margin-top: 15px;
+            margin-top: 8px;
             text-align: left;
         }
         .eval-badge {
             display: inline-block;
-            padding: 4px 8px;
+            padding: 2px 6px;
             border-radius: 3px;
             color: white;
             font-weight: bold;
-            font-size: 0.85em;
+            font-size: 0.8em;
         }
         .eval-A { background: #4CAF50; }
         .eval-B { background: #FF9800; }
@@ -198,52 +205,41 @@
     
     <!-- SECTION 0: INTRO & FORM -->
     <div id="section-intro">
-        <h1>面接用テスト問題 <br>(Tes Wawancara)</h1>
+        <h2>面接用テスト問題 (Tes Wawancara)</h2>
         
         <div class="candidate-info-box">
-            <div class="form-group">
-                <label>氏名 / Nama Lengkap:</label>
-                <input type="text" id="candidateName" placeholder="山田 太郎 / Budi Santoso" required>
-            </div>
-            <div class="form-group">
-                <label>受験番号 / Nomor Ujian:</label>
-                <input type="text" id="candidateNumber" placeholder="Contoh: 001" required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>氏名 / Nama Lengkap:</label>
+                    <input type="text" id="candidateName" placeholder="Budi Santoso" required>
+                </div>
+                <div class="form-group">
+                    <label>受験番号 / No. Ujian:</label>
+                    <input type="text" id="candidateNumber" placeholder="001" required>
+                </div>
             </div>
         </div>
 
         <div class="instructions">
-            <h3 style="margin-top:0; font-size:1.1em;">【注意事項】<br><small>Petunjuk Umum</small></h3>
             <div class="bilingual-text">
-                <span class="jp-text">・すべての問題は日本語の指示文があります。難しく感じる問題は飛ばして、後で戻ってください。</span>
-                <span class="id-text">Semua soal menggunakan bahasa Jepang. Jika sulit, lewati dulu dan kembali lagi nanti.</span>
+                <span class="jp-text">・すべての問題は日本語の指示文があります。</span>
+                <span class="id-text">Semua soal menggunakan bahasa Jepang. Jika sulit, lewati dulu.</span>
             </div>
             <div class="bilingual-text">
-                <span class="jp-text">・時間は全部で約30分です。クレペリン検査は約5分、知能テストは10問で約25分です。</span>
-                <span class="id-text">Total waktu sekitar 30 menit: tes Kraepelin sekitar 5 menit, tes IQ sekitar 25 menit.</span>
-            </div>
-            <div class="bilingual-text">
-                <span class="jp-text">・不正解でも減点はありません。考えて書くことが大切です。</span>
-                <span class="id-text">Tidak ada pengurangan nilai untuk jawaban salah. Yang penting adalah berusaha menjawab.</span>
+                <span class="jp-text">・時間は全部で約30分 (クレペリン約5分、知能テスト約25分)。</span>
+                <span class="id-text">Total waktu ±30 menit (Kraepelin 5 menit, Tes IQ 25 menit).</span>
             </div>
         </div>
-        <button class="btn" onclick="startKraepelin()">テストを開始する <br> (Mulai Tes Sekarang)</button>
+        <button class="btn" onclick="startKraepelin()">テストを開始する (Mulai Tes)</button>
     </div>
 
-    <!-- SECTION 1: KRAEPELIN -->
+    <!-- SECTION 1: KRAEPELIN (TABLE FORMAT) -->
     <div id="section-kraepelin">
         <h2>① クレペリン検査 (Kraepelin Test)</h2>
-        <div class="instructions">
+        <div class="instructions" style="padding: 4px 8px; margin-bottom: 5px;">
             <div class="bilingual-text">
-                <span class="jp-text">・上にある数字と、すぐ下にある数字を足して、数字の間に書いてください。</span>
-                <span class="id-text">Jumlahkan angka di atas dengan angka di bawahnya, lalu tulis hasilnya di antara kedua angka.</span>
-            </div>
-            <div class="bilingual-text">
-                <span class="jp-text">・1列ずつ上から下に進めてください。</span>
-                <span class="id-text">Kerjakan satu kolom dari atas ke bawah.</span>
-            </div>
-            <div class="bilingual-text">
-                <span class="jp-text">・間違えても消しゴムを使わず、そのまま次の問題に進んでください。</span>
-                <span class="id-text">Jika salah, biarkan saja dan langsung lanjut ke soal berikutnya.</span>
+                <span class="jp-text">・上と下を足して間に書く。上から下へ。消しゴム不可。合計も記入。</span>
+                <span class="id-text">Jumlahkan angka atas & bawah, tulis di tengah. Kerjakan dari atas ke bawah.</span>
             </div>
         </div>
         
@@ -251,9 +247,18 @@
             残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
-        <!-- AREA KRAEPELIN COMPACT -->
-        <div class="test-area-kraepelin" id="testAreaKraepelin">
-            <!-- Kolom di-generate oleh JS -->
+        <!-- Tabel Kraepelin 1 Halaman -->
+        <div class="kraepelin-table-container">
+            <table class="k-table" id="kraepelinTable">
+                <thead>
+                    <tr>
+                        <th>列1</th><th>列2</th><th>列3</th><th>列4</th><th>列5</th><th>列6</th>
+                    </tr>
+                </thead>
+                <tbody id="kTableBody">
+                    <!-- Diisi lewat JavaScript secara dinamis & acak -->
+                </tbody>
+            </table>
         </div>
 
         <button class="btn btn-finish" onclick="finishKraepelinEarly()">次へ進む (Selesai & Lanjut Tes IQ)</button>
@@ -261,11 +266,11 @@
 
     <!-- SECTION 2: IQ TEST -->
     <div id="section-iq">
-        <h2>② 簡単な知能テスト (10問) <br>(Tes IQ Sederhana)</h2>
+        <h2>② 簡単な知能テスト (Tes IQ)</h2>
         <div class="instructions">
             <div class="bilingual-text">
-                <span class="jp-text">・各問題に1つずつ答えてください。計算問題はメモ用紙を使ってもOKです。</span>
-                <span class="id-text">Jawab satu soal dengan satu pilihan. Boleh menggunakan kertas coretan.</span>
+                <span class="jp-text">・各問題に1つずつ答えてください。</span>
+                <span class="id-text">Jawab satu pilihan untuk setiap soal.</span>
             </div>
         </div>
         
@@ -274,9 +279,8 @@
         </div>
 
         <div id="iq-questions-container">
-            <!-- Soal 1 -->
-            <div class="iq-question">
-                <p>問 1. 25 ＋ 38 はいくつですか。</p>
+            <!-- Soal 1-10 -->
+            <div class="iq-question"><p>問 1. 25 ＋ 38 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q1" value="ア"> ア) 53</label>
                     <label><input type="radio" name="q1" value="イ"> イ) 63</label>
@@ -284,9 +288,7 @@
                     <label><input type="radio" name="q1" value="エ"> エ) 62</label>
                 </div>
             </div>
-            <!-- Soal 2 -->
-            <div class="iq-question">
-                <p>問 2. 100 − 45 はいくつですか。</p>
+            <div class="iq-question"><p>問 2. 100 − 45 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q2" value="ア"> ア) 45</label>
                     <label><input type="radio" name="q2" value="イ"> イ) 55</label>
@@ -294,9 +296,7 @@
                     <label><input type="radio" name="q2" value="エ"> エ) 50</label>
                 </div>
             </div>
-            <!-- Soal 3 -->
-            <div class="iq-question">
-                <p>問 3. 7 × 8 はいくつですか。</p>
+            <div class="iq-question"><p>問 3. 7 × 8 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q3" value="ア"> ア) 54</label>
                     <label><input type="radio" name="q3" value="イ"> イ) 56</label>
@@ -304,9 +304,7 @@
                     <label><input type="radio" name="q3" value="エ"> エ) 48</label>
                 </div>
             </div>
-            <!-- Soal 4 -->
-            <div class="iq-question">
-                <p>問 4. 72 ÷ 9 はいくつですか。</p>
+            <div class="iq-question"><p>問 4. 72 ÷ 9 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q4" value="ア"> ア) 6</label>
                     <label><input type="radio" name="q4" value="イ"> イ) 7</label>
@@ -314,9 +312,7 @@
                     <label><input type="radio" name="q4" value="エ"> エ) 9</label>
                 </div>
             </div>
-            <!-- Soal 5 -->
-            <div class="iq-question">
-                <p>問 5. 次の数列に入る数字はどれですか。 5, 10, 15, 20, ？</p>
+            <div class="iq-question"><p>問 5. 次の数列に入る数字はどれですか。 5, 10, 15, 20, ？</p>
                 <div class="options">
                     <label><input type="radio" name="q5" value="ア"> ア) 21</label>
                     <label><input type="radio" name="q5" value="イ"> イ) 22</label>
@@ -324,9 +320,7 @@
                     <label><input type="radio" name="q5" value="エ"> エ) 30</label>
                 </div>
             </div>
-            <!-- Soal 6 -->
-            <div class="iq-question">
-                <p>問 6. 朝9時から夕方5時（17時）まで仕事をしました。何時間働きましたか。</p>
+            <div class="iq-question"><p>問 6. 朝9時から夕方5時（17時）まで仕事をしました。何時間働きましたか。</p>
                 <div class="options">
                     <label><input type="radio" name="q6" value="ア"> ア) 7時間</label>
                     <label><input type="radio" name="q6" value="イ"> イ) 8時間半</label>
@@ -334,9 +328,7 @@
                     <label><input type="radio" name="q6" value="エ"> エ) 9時間</label>
                 </div>
             </div>
-            <!-- Soal 7 -->
-            <div class="iq-question">
-                <p>問 7. 500円を持って、320円のパンを買いました。おつりはいくらですか。</p>
+            <div class="iq-question"><p>問 7. 500円を持って、320円のパンを買いました。おつりはいくらですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q7" value="ア"> ア) 120円</label>
                     <label><input type="radio" name="q7" value="イ"> イ) 180円</label>
@@ -344,9 +336,7 @@
                     <label><input type="radio" name="q7" value="エ"> エ) 320円</label>
                 </div>
             </div>
-            <!-- Soal 8 -->
-            <div class="iq-question">
-                <p>問 8. 月曜日の次の日は何曜日ですか。</p>
+            <div class="iq-question"><p>問 8. 月曜日の次の日は何曜日ですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q8" value="ア"> ア) 日曜日</label>
                     <label><input type="radio" name="q8" value="イ"> イ) 火曜日</label>
@@ -354,9 +344,7 @@
                     <label><input type="radio" name="q8" value="エ"> エ) 金曜日</label>
                 </div>
             </div>
-            <!-- Soal 9 -->
-            <div class="iq-question">
-                <p>問 9. 次の4つの数で一番大きい数はどれですか。 12, 21, 15, 9</p>
+            <div class="iq-question"><p>問 9. 次の4つの数で一番大きい数はどれですか。 12, 21, 15, 9</p>
                 <div class="options">
                     <label><input type="radio" name="q9" value="ア"> ア) 12</label>
                     <label><input type="radio" name="q9" value="イ"> イ) 21</label>
@@ -364,9 +352,7 @@
                     <label><input type="radio" name="q9" value="エ"> エ) 9</label>
                 </div>
             </div>
-            <!-- Soal 10 -->
-            <div class="iq-question">
-                <p>問 10. 1日に5個ずつ部品を作ります。4日で全部で何個作れますか。</p>
+            <div class="iq-question"><p>問 10. 1日に5個ずつ部品を作ります。4日で全部で何個作れますか。</p>
                 <div class="options">
                     <label><input type="radio" name="q10" value="ア"> ア) 15個</label>
                     <label><input type="radio" name="q10" value="イ"> イ) 20個</label>
@@ -382,25 +368,18 @@
     <!-- SECTION 3: HASIL -->
     <div id="section-result">
         <h2>テスト終了 (Tes Selesai)</h2>
-        
         <div class="candidate-info-box">
-            <p style="margin:0 0 5px 0;"><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
+            <p style="margin:0 0 3px 0;"><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
             <p style="margin:0;"><strong>受験番号 / No. Ujian:</strong> <span id="resNumber"></span></p>
         </div>
-
-        <div class="result-box" id="result-kraepelin">
-            <!-- Hasil Kraepelin -->
-        </div>
-        <div class="result-box" id="result-iq">
-            <!-- Hasil IQ -->
-        </div>
-        <p style="text-align:center; margin-top:20px; font-size: 0.9em; color: #666;">面接官にこの画面を見せてください。<br>(Silakan tunjukkan halaman ini kepada Pewawancara)</p>
+        <div class="result-box" id="result-kraepelin"></div>
+        <div class="result-box" id="result-iq"></div>
+        <p style="text-align:center; margin-top:10px; font-size: 0.85em; color: #666;">面接官にこの画面を見せてください。</p>
     </div>
 
 </div>
 
 <script>
-    /* DATA KRAEPELIN */
     const columnsData = [
         [2, 3, 8, 1, 6, 4, 9, 7, 5, 3, 9, 2, 4, 6, 8, 1, 5, 7, 3, 9],
         [7, 2, 4, 8, 5, 9, 6, 3, 2, 7, 1, 5, 8, 4, 9, 3, 6, 2, 8, 5],
@@ -410,7 +389,6 @@
         [4, 9, 7, 6, 1, 5, 2, 8, 3, 9, 4, 8, 1, 2, 7, 6, 2, 5, 9, 3]
     ];
 
-    /* KUNCI JAWABAN IQ */
     const iqAnswers = {
         q1: 'イ', q2: 'イ', q3: 'イ', q4: 'ウ', q5: 'ウ', 
         q6: 'ウ', q7: 'イ', q8: 'イ', q9: 'イ', q10: 'イ'
@@ -420,6 +398,7 @@
     let timeK = 300; 
     let timeI = 1500; 
     let kraepelinScore = { correct: 0, total: 0, speed: 0, accuracy: 0 };
+    let randomizedColumnsData = [];
 
     function shuffleArray(array) {
         let shuffled = array.slice();
@@ -430,31 +409,47 @@
         return shuffled;
     }
 
-    let randomizedColumnsData = [];
-
-    function generateKraepelinGrid() {
-        const testArea = document.getElementById('testAreaKraepelin');
-        testArea.innerHTML = '';
+    function generateKraepelinTable() {
+        const tbody = document.getElementById('kTableBody');
+        tbody.innerHTML = '';
         randomizedColumnsData = [];
 
-        columnsData.forEach((col, colIndex) => {
-            let shuffledCol = shuffleArray(col);
-            randomizedColumnsData.push(shuffledCol);
+        let shuffledCols = columnsData.map(col => shuffleArray(col));
+        randomizedColumnsData = shuffledCols;
 
-            const colDiv = document.createElement('div');
-            colDiv.className = 'column';
-            let colHTML = `<div style="font-size:0.75em; margin-bottom:2px;">列 ${colIndex + 1}</div>`;
-            for (let i = 0; i < shuffledCol.length; i++) {
-                colHTML += `<div class="number">${shuffledCol[i]}</div>`;
-                if (i < shuffledCol.length - 1) {
-                    colHTML += `<input type="number" class="answer-input" id="ans_${colIndex}_${i}">`;
-                }
+        // Total ada 20 baris angka per kolom, dan 19 baris kotak jawaban di antaranya.
+        for (let i = 0; i < 20; i++) {
+            let tr = document.createElement('tr');
+            
+            for (let col = 0; col < 6; col++) {
+                // Kolom Angka Asli
+                let tdNum = document.createElement('td');
+                tdNum.className = 'num-cell';
+                tdNum.innerText = shuffledCols[col][i];
+                tr.appendChild(tdNum);
             }
-            colHTML += `<hr style="margin:2px 0;"><div style="font-size:0.7em;">合計</div>`;
-            colHTML += `<input type="number" class="total-input" id="total_${colIndex}">`;
-            colDiv.innerHTML = colHTML;
-            testArea.appendChild(colDiv);
-        });
+            tbody.appendChild(tr);
+
+            // Jika belum baris terakhir, buat baris kotak input jawaban di bawahnya
+            if (i < 19) {
+                let trInput = document.createElement('tr');
+                for (let col = 0; col < 6; col++) {
+                    let tdInput = document.createElement('td');
+                    tdInput.innerHTML = `<input type="number" class="k-input" id="ans_${col}_${i}">`;
+                    trInput.appendChild(tdInput);
+                }
+                tbody.appendChild(trInput);
+            }
+        }
+
+        // Baris terakhir untuk Total (合計)
+        let trTotal = document.createElement('tr');
+        for (let col = 0; col < 6; col++) {
+            let tdTotal = document.createElement('td');
+            tdTotal.innerHTML = `<input type="number" class="k-input" id="total_${col}" placeholder="Total" style="background:#fff3e0;">`;
+            trTotal.appendChild(tdTotal);
+        }
+        tbody.appendChild(trTotal);
     }
 
     function startKraepelin() {
@@ -462,7 +457,7 @@
         const cNumber = document.getElementById('candidateNumber').value.trim();
         
         if(cName === "" || cNumber === "") {
-            alert("氏名と受験番号を入力してください！\n(Harap isi Nama dan Nomor Ujian terlebih dahulu!)");
+            alert("氏名と受験番号を入力してください！");
             return;
         }
 
@@ -472,24 +467,21 @@
         document.getElementById('section-intro').style.display = 'none';
         document.getElementById('section-kraepelin').style.display = 'block';
         
-        window.scrollTo(0, 0); // Scroll ke atas agar timer terlihat
-        generateKraepelinGrid();
+        window.scrollTo(0, 0);
+        generateKraepelinTable();
         
         timerKraepelin = setInterval(() => {
             timeK--;
             let m = Math.floor(timeK / 60);
             let s = timeK % 60;
             document.getElementById('timeKraepelin').innerText = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
-            if (timeK <= 0) {
-                finishKraepelinEarly();
-            }
+            if (timeK <= 0) finishKraepelinEarly();
         }, 1000);
     }
 
     function finishKraepelinEarly() {
         clearInterval(timerKraepelin);
         calculateKraepelin();
-        
         document.getElementById('section-kraepelin').style.display = 'none';
         document.getElementById('section-iq').style.display = 'block';
         startIqTimer();
@@ -521,9 +513,7 @@
             let m = Math.floor(timeI / 60);
             let s = timeI % 60;
             document.getElementById('timeIq').innerText = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
-            if (timeI <= 0) {
-                finishAll();
-            }
+            if (timeI <= 0) finishAll();
         }, 1000);
     }
 
@@ -536,33 +526,26 @@
     }
 
     function showFinalDashboard() {
-        let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (速い / Cepat)</span>' : 
-                   (kraepelinScore.speed >= 5 ? '<span class="eval-badge eval-B">B (標準 / Standar)</span>' : '<span class="eval-badge eval-C">C (遅い / Lambat)</span>');
+        let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (速い)</span>' : 
+                   (kraepelinScore.speed >= 5 ? '<span class="eval-badge eval-B">B (標準)</span>' : '<span class="eval-badge eval-C">C (遅い)</span>');
         
         document.getElementById('result-kraepelin').innerHTML = `
-            <h3 style="margin-top:0;">① クレペリン検査結果 (Hasil Kraepelin)</h3>
-            <p><strong>正答数 (Jawaban Benar):</strong> ${kraepelinScore.correct}</p>
-            <p><strong>正確率 (Akurasi):</strong> ${kraepelinScore.accuracy}%</p>
-            <p><strong>処理速度 (Kecepatan):</strong> ${kraepelinScore.speed} 問/分 (Soal/Menit) &nbsp; ${kEval}</p>
+            <h3 style="margin-top:0;">① クレペリン検査結果</h3>
+            <p><strong>正答数:</strong> ${kraepelinScore.correct} | <strong>正確率:</strong> ${kraepelinScore.accuracy}% | <strong>速度:</strong> ${kraepelinScore.speed} 問/分 &nbsp; ${kEval}</p>
         `;
 
         let iqCorrect = 0;
         for (let i = 1; i <= 10; i++) {
             let selected = document.querySelector(`input[name="q${i}"]:checked`);
-            if (selected && selected.value === iqAnswers[`q${i}`]) {
-                iqCorrect++;
-            }
+            if (selected && selected.value === iqAnswers[`q${i}`]) iqCorrect++;
         }
         
-        let iqEvalBadge = "";
-        if (iqCorrect >= 9) iqEvalBadge = '<span class="eval-badge eval-A">評価 A (優秀 / Sangat Baik)</span>';
-        else if (iqCorrect >= 6) iqEvalBadge = '<span class="eval-badge eval-B">評価 B (標準 / Standar)</span>';
-        else iqEvalBadge = '<span class="eval-badge eval-C">評価 C (要支援 / Perlu Bimbingan)</span>';
+        let iqEvalBadge = iqCorrect >= 9 ? '<span class="eval-badge eval-A">評価 A (優秀)</span>' : 
+                          (iqCorrect >= 6 ? '<span class="eval-badge eval-B">評価 B (標準)</span>' : '<span class="eval-badge eval-C">評価 C (要支援)</span>');
 
         document.getElementById('result-iq').innerHTML = `
-            <h3 style="margin-top:0;">② 知能テスト結果 (Hasil Tes IQ)</h3>
-            <p><strong>正答数 (Jawaban Benar):</strong> 10問中 ${iqCorrect} 問</p>
-            <p><strong>評価 (Penilaian):</strong> ${iqEvalBadge}</p>
+            <h3 style="margin-top:0;">② 知能テスト結果</h3>
+            <p><strong>正答数:</strong> 10問中 ${iqCorrect} 問 &nbsp; ${iqEvalBadge}</p>
         `;
     }
 </script>
