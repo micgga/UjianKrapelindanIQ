@@ -10,20 +10,21 @@
             background-color: #f0f2f5;
             color: #333;
             margin: 0;
-            padding: 15px;
-            line-height: 1.6;
+            padding: 10px;
+            line-height: 1.4;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         h1, h2, h3 {
             text-align: center;
             color: #2c3e50;
+            margin-top: 0;
         }
         .bilingual-text {
             margin-bottom: 5px;
@@ -31,104 +32,120 @@
         .jp-text {
             font-weight: bold;
             color: #1a237e;
+            font-size: 0.9em;
         }
         .id-text {
             color: #424242;
-            font-size: 0.95em;
-            margin-bottom: 10px;
+            font-size: 0.85em;
+            margin-bottom: 8px;
             display: block;
         }
         .instructions {
             background: #e9f5ff;
-            padding: 15px;
+            padding: 10px 15px;
             border-left: 5px solid #2196F3;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-radius: 4px;
         }
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .form-group label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
             color: #333;
+            font-size: 0.9em;
         }
         .form-group input {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            font-size: 1em;
+            font-size: 0.9em;
         }
         .candidate-info-box {
             background: #fff3e0;
-            padding: 15px;
+            padding: 10px 15px;
             border: 1px solid #ffe0b2;
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .timer-container {
             text-align: center;
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #d32f2f;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: #ffebee;
-            padding: 10px;
+            padding: 8px;
             border-radius: 5px;
         }
+        
+        /* STYLE KRAEPELIN - COMPACT MODE UNTUK 1 LAYAR */
         .test-area-kraepelin {
             overflow-x: auto;
             white-space: nowrap;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             text-align: center;
         }
         .column {
             display: inline-block;
             vertical-align: top;
-            width: 70px;
-            margin-right: 15px;
+            width: 45px; /* Dibuat lebih ramping */
+            margin-right: 8px;
             text-align: center;
         }
         .number {
-            font-size: 1.2em;
+            font-size: 0.95em;
             font-weight: bold;
-            padding: 3px 0;
+            padding: 0;
+            line-height: 1.1;
         }
         .answer-input, .total-input {
             width: 100%;
-            padding: 6px;
+            padding: 1px;
             text-align: center;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin: 2px 0;
+            font-size: 0.9em;
+            border: 1px solid #999;
+            border-radius: 3px;
+            margin: 1px 0;
+            height: 20px; /* Tinggi kotak diturunkan drastis agar tidak perlu scroll */
             -moz-appearance: textfield;
+            background-color: #fafafa;
+        }
+        .answer-input:focus {
+            background-color: #fff;
+            border-color: #2196F3;
+            outline: none;
         }
         .answer-input::-webkit-outer-spin-button,
         .answer-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
+        
+        /* Style IQ Test */
         .iq-question {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
             border-bottom: 1px dashed #ccc;
         }
         .iq-question p {
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
         }
         .options label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             cursor: pointer;
             background: #f9f9f9;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 4px;
             border: 1px solid #eee;
+            font-size: 0.9em;
         }
         .options label:hover {
             background: #f1f1f1;
@@ -136,36 +153,39 @@
         .btn {
             display: block;
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             background: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .btn:hover { background: #45a049; }
         .btn-finish { background: #f44336; }
         .btn-finish:hover { background: #da190b; }
         .btn-next { background: #2196F3; }
         .btn-next:hover { background: #1976d2; }
+        
         #section-kraepelin, #section-iq, #section-result { display: none; }
+        
         .result-box {
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             border: 1px solid #dee2e6;
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: left;
         }
         .eval-badge {
             display: inline-block;
-            padding: 5px 10px;
+            padding: 4px 8px;
             border-radius: 3px;
             color: white;
             font-weight: bold;
+            font-size: 0.85em;
         }
         .eval-A { background: #4CAF50; }
         .eval-B { background: #FF9800; }
@@ -192,7 +212,7 @@
         </div>
 
         <div class="instructions">
-            <h3 style="margin-top:0;">【注意事項】<br><small>Petunjuk Umum</small></h3>
+            <h3 style="margin-top:0; font-size:1.1em;">【注意事項】<br><small>Petunjuk Umum</small></h3>
             <div class="bilingual-text">
                 <span class="jp-text">・すべての問題は日本語の指示文があります。難しく感じる問題は飛ばして、後で戻ってください。</span>
                 <span class="id-text">Semua soal menggunakan bahasa Jepang. Jika sulit, lewati dulu dan kembali lagi nanti.</span>
@@ -211,7 +231,7 @@
 
     <!-- SECTION 1: KRAEPELIN -->
     <div id="section-kraepelin">
-        <h2>① クレペリン検査 <br>(Kraepelin Test)</h2>
+        <h2>① クレペリン検査 (Kraepelin Test)</h2>
         <div class="instructions">
             <div class="bilingual-text">
                 <span class="jp-text">・上にある数字と、すぐ下にある数字を足して、数字の間に書いてください。</span>
@@ -223,11 +243,7 @@
             </div>
             <div class="bilingual-text">
                 <span class="jp-text">・間違えても消しゴムを使わず、そのまま次の問題に進んでください。</span>
-                <span class="id-text">Jika salah, jangan dihapus, langsung lanjut ke soal berikutnya.</span>
-            </div>
-            <div class="bilingual-text">
-                <span class="jp-text">※各列の合計も下の「合計」のマスに書いてください。</span>
-                <span class="id-text">Catatan: Jumlahkan juga setiap kolom dan tulis di baris "合計/Total" di bawah.</span>
+                <span class="id-text">Jika salah, biarkan saja dan langsung lanjut ke soal berikutnya.</span>
             </div>
         </div>
         
@@ -235,6 +251,7 @@
             残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
+        <!-- AREA KRAEPELIN COMPACT -->
         <div class="test-area-kraepelin" id="testAreaKraepelin">
             <!-- Kolom di-generate oleh JS -->
         </div>
@@ -247,12 +264,8 @@
         <h2>② 簡単な知能テスト (10問) <br>(Tes IQ Sederhana)</h2>
         <div class="instructions">
             <div class="bilingual-text">
-                <span class="jp-text">・各問題に1つずつ答えてください。</span>
-                <span class="id-text">Jawab satu soal dengan satu pilihan.</span>
-            </div>
-            <div class="bilingual-text">
-                <span class="jp-text">・計算問題はメモ用紙を使ってもOKです。</span>
-                <span class="id-text">Untuk soal hitungan, boleh menggunakan kertas coretan.</span>
+                <span class="jp-text">・各問題に1つずつ答えてください。計算問題はメモ用紙を使ってもOKです。</span>
+                <span class="id-text">Jawab satu soal dengan satu pilihan. Boleh menggunakan kertas coretan.</span>
             </div>
         </div>
         
@@ -371,8 +384,8 @@
         <h2>テスト終了 (Tes Selesai)</h2>
         
         <div class="candidate-info-box">
-            <p><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
-            <p><strong>受験番号 / No. Ujian:</strong> <span id="resNumber"></span></p>
+            <p style="margin:0 0 5px 0;"><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
+            <p style="margin:0;"><strong>受験番号 / No. Ujian:</strong> <span id="resNumber"></span></p>
         </div>
 
         <div class="result-box" id="result-kraepelin">
@@ -397,28 +410,19 @@
         [4, 9, 7, 6, 1, 5, 2, 8, 3, 9, 4, 8, 1, 2, 7, 6, 2, 5, 9, 3]
     ];
 
-    /* KUNCI JAWABAN IQ BARU */
+    /* KUNCI JAWABAN IQ */
     const iqAnswers = {
-        q1: 'イ',  // 25+38 = 63 (イ)
-        q2: 'イ',  // 100-45 = 55 (イ)
-        q3: 'イ',  // 7*8 = 56 (イ)
-        q4: 'ウ',  // 72/9 = 8 (ウ)
-        q5: 'ウ',  // 5,10,15,20,25 (ウ)
-        q6: 'ウ',  // 9-17 = 8時間 (ウ)
-        q7: 'イ',  // 500-320 = 180 (イ)
-        q8: 'イ',  // Next day of Mon is Tue (イ)
-        q9: 'イ',  // Largest is 21 (イ)
-        q10: 'イ'  // 5*4 = 20 (イ)
+        q1: 'イ', q2: 'イ', q3: 'イ', q4: 'ウ', q5: 'ウ', 
+        q6: 'ウ', q7: 'イ', q8: 'イ', q9: 'イ', q10: 'イ'
     };
 
     let timerKraepelin, timerIq;
-    let timeK = 300; // 5 menit
-    let timeI = 1500; // 25 menit
+    let timeK = 300; 
+    let timeI = 1500; 
     let kraepelinScore = { correct: 0, total: 0, speed: 0, accuracy: 0 };
 
-    /* FUNGSI PENGACAK ARRAY (Fisher-Yates Shuffle) */
     function shuffleArray(array) {
-        let shuffled = array.slice(); // Copy array agar data asli aman
+        let shuffled = array.slice();
         for (let i = shuffled.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -426,37 +430,33 @@
         return shuffled;
     }
 
-    /* GENERATE KRAEPELIN GRID DENGAN ANGKA ACAK PER KOLOM */
     let randomizedColumnsData = [];
 
     function generateKraepelinGrid() {
         const testArea = document.getElementById('testAreaKraepelin');
         testArea.innerHTML = '';
-        randomizedColumnsData = []; // Reset setiap kali tes dimulai
+        randomizedColumnsData = [];
 
         columnsData.forEach((col, colIndex) => {
-            // Acak urutan angka dalam kolom ini
             let shuffledCol = shuffleArray(col);
             randomizedColumnsData.push(shuffledCol);
 
             const colDiv = document.createElement('div');
             colDiv.className = 'column';
-            let colHTML = `<div><small>列 ${colIndex + 1}</small></div>`;
+            let colHTML = `<div style="font-size:0.75em; margin-bottom:2px;">列 ${colIndex + 1}</div>`;
             for (let i = 0; i < shuffledCol.length; i++) {
                 colHTML += `<div class="number">${shuffledCol[i]}</div>`;
                 if (i < shuffledCol.length - 1) {
-                    // Pindah otomatis (oninput) sudah dihapus dari tag input di bawah ini
                     colHTML += `<input type="number" class="answer-input" id="ans_${colIndex}_${i}">`;
                 }
             }
-            colHTML += `<hr><div style="font-size: 0.8em;">合計</div>`;
+            colHTML += `<hr style="margin:2px 0;"><div style="font-size:0.7em;">合計</div>`;
             colHTML += `<input type="number" class="total-input" id="total_${colIndex}">`;
             colDiv.innerHTML = colHTML;
             testArea.appendChild(colDiv);
         });
     }
 
-    /* MULAI UJIAN */
     function startKraepelin() {
         const cName = document.getElementById('candidateName').value.trim();
         const cNumber = document.getElementById('candidateNumber').value.trim();
@@ -471,6 +471,8 @@
 
         document.getElementById('section-intro').style.display = 'none';
         document.getElementById('section-kraepelin').style.display = 'block';
+        
+        window.scrollTo(0, 0); // Scroll ke atas agar timer terlihat
         generateKraepelinGrid();
         
         timerKraepelin = setInterval(() => {
@@ -497,7 +499,6 @@
         let correctAnswers = 0;
         let totalQuestions = 0;
         
-        // Gunakan randomizedColumnsData untuk mengecek jawaban
         for (let col = 0; col < randomizedColumnsData.length; col++) {
             for (let row = 0; row < randomizedColumnsData[col].length - 1; row++) {
                 totalQuestions++;
@@ -535,18 +536,16 @@
     }
 
     function showFinalDashboard() {
-        // Hasil Kraepelin
         let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (速い / Cepat)</span>' : 
                    (kraepelinScore.speed >= 5 ? '<span class="eval-badge eval-B">B (標準 / Standar)</span>' : '<span class="eval-badge eval-C">C (遅い / Lambat)</span>');
         
         document.getElementById('result-kraepelin').innerHTML = `
-            <h3>① クレペリン検査結果 (Hasil Kraepelin)</h3>
+            <h3 style="margin-top:0;">① クレペリン検査結果 (Hasil Kraepelin)</h3>
             <p><strong>正答数 (Jawaban Benar):</strong> ${kraepelinScore.correct}</p>
             <p><strong>正確率 (Akurasi):</strong> ${kraepelinScore.accuracy}%</p>
             <p><strong>処理速度 (Kecepatan):</strong> ${kraepelinScore.speed} 問/分 (Soal/Menit) &nbsp; ${kEval}</p>
         `;
 
-        // Hasil IQ
         let iqCorrect = 0;
         for (let i = 1; i <= 10; i++) {
             let selected = document.querySelector(`input[name="q${i}"]:checked`);
@@ -561,7 +560,7 @@
         else iqEvalBadge = '<span class="eval-badge eval-C">評価 C (要支援 / Perlu Bimbingan)</span>';
 
         document.getElementById('result-iq').innerHTML = `
-            <h3>② 知能テスト結果 (Hasil Tes IQ)</h3>
+            <h3 style="margin-top:0;">② 知能テスト結果 (Hasil Tes IQ)</h3>
             <p><strong>正答数 (Jawaban Benar):</strong> 10問中 ${iqCorrect} 問</p>
             <p><strong>評価 (Penilaian):</strong> ${iqEvalBadge}</p>
         `;
