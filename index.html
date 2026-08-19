@@ -87,7 +87,7 @@
             border-radius: 4px;
         }
         
-        /* TABEL KRAEPELIN DENGAN SCROLL */
+        /* TABEL KRAEPELIN DENGAN AUTO SCROLL */
         .kraepelin-fixed-container {
             width: 100%;
             max-height: 65vh;
@@ -95,6 +95,7 @@
             border: 1px solid #cfd8dc;
             border-radius: 4px;
             background: #fafafa;
+            scroll-behavior: smooth; /* Membuat animasi gulir otomatis lebih mulus */
         }
         .paten-table {
             width: 100%;
@@ -260,7 +261,7 @@
             残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
-        <!-- Tabel Kraepelin dengan Auto-Scroll 1 Detik -->
+        <!-- Tabel Kraepelin dengan Auto-Scroll ke Bawah Otomatis -->
         <div class="kraepelin-fixed-container" id="kraepelinContainer">
             <table class="paten-table" id="patenKraepelinTable">
                 <thead>
@@ -449,15 +450,17 @@
                     input.className = 'paten-input';
                     input.id = `ans_${col}_${i}`;
                     
-                    // Navigasi pindah otomatis KE BAWAH diatur menjadi tepat 1000ms (1 detik)
+                    // Auto-focus ke bawah (0.8 detik) + Auto-Scroll ke elemen berikutnya agar selalu terlihat
                     input.addEventListener('input', function() {
                         if (this.value.length >= 1) {
                             setTimeout(() => {
                                 let nextInput = document.getElementById(`ans_${col}_${i + 1}`);
                                 if (nextInput) {
                                     nextInput.focus();
+                                    // Menggulirkan kontainer secara otomatis agar input berikutnya langsung tampak di layar
+                                    nextInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                 }
-                            }, 1000); // Jeda 1000ms (1 detik)
+                            }, 800); // Jeda 800ms (0.8 detik)
                         }
                     });
 
