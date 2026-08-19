@@ -260,7 +260,7 @@
             残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
-        <!-- Tabel Kraepelin dengan Auto-Scroll Diperlambat (1.5 detik) -->
+        <!-- Tabel Kraepelin dengan Auto-Scroll 1 Detik -->
         <div class="kraepelin-fixed-container" id="kraepelinContainer">
             <table class="paten-table" id="patenKraepelinTable">
                 <thead>
@@ -449,7 +449,7 @@
                     input.className = 'paten-input';
                     input.id = `ans_${col}_${i}`;
                     
-                    // Navigasi pindah otomatis KE BAWAH diperlambat menjadi 1500ms (1.5 detik)
+                    // Navigasi pindah otomatis KE BAWAH diatur menjadi tepat 1000ms (1 detik)
                     input.addEventListener('input', function() {
                         if (this.value.length >= 1) {
                             setTimeout(() => {
@@ -457,7 +457,7 @@
                                 if (nextInput) {
                                     nextInput.focus();
                                 }
-                            }, 1500); // Jeda 1500ms (1.5 detik)
+                            }, 1000); // Jeda 1000ms (1 detik)
                         }
                     });
 
