@@ -95,7 +95,7 @@
             border: 1px solid #cfd8dc;
             border-radius: 4px;
             background: #fafafa;
-            scroll-behavior: smooth; /* Membuat animasi gulir otomatis lebih mulus */
+            scroll-behavior: smooth;
         }
         .paten-table {
             width: 100%;
@@ -211,6 +211,14 @@
         .eval-A { background: #4CAF50; }
         .eval-B { background: #FF9800; }
         .eval-C { background: #F44336; }
+
+        ruby {
+            ruby-align: center;
+        }
+        rt {
+            font-size: 0.6em;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -219,16 +227,16 @@
     
     <!-- SECTION 0: INTRO & FORM -->
     <div id="section-intro">
-        <h2>面接用テスト問題 (Tes Wawancara)</h2>
+        <h2><ruby>面接用<rt>めんせつよう</rt></ruby>テスト<ruby>問題<rt>もんだい</rt></ruby> (Tes Wawancara)</h2>
         
         <div class="candidate-info-box">
             <div class="form-row">
                 <div class="form-group">
-                    <label>氏名 / Nama Lengkap:</label>
+                    <label><ruby>氏名<rt>しめい</rt></ruby> / Nama Lengkap:</label>
                     <input type="text" id="candidateName" placeholder="Budi Santoso" required>
                 </div>
                 <div class="form-group">
-                    <label>受験番号 / No. Ujian:</label>
+                    <label><ruby>受験番号<rt>じゅけんばんごう</rt></ruby> / No. Ujian:</label>
                     <input type="text" id="candidateNumber" placeholder="001" required>
                 </div>
             </div>
@@ -236,37 +244,36 @@
 
         <div class="instructions">
             <div class="bilingual-text">
-                <span class="jp-text">・すべての問題は日本語の指示文があります。</span>
+                <span class="jp-text">・<ruby>全<rt>すべ</rt></ruby>ての<ruby>問題<rt>もんだい</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>指示文<rt>しじぶん</rt></ruby>があります。</span>
                 <span class="id-text">Semua soal menggunakan bahasa Jepang. Jika sulit, lewati dulu.</span>
             </div>
             <div class="bilingual-text">
-                <span class="jp-text">・時間は全部で約30分 (クレペリン約5分、知能テスト約25分)。</span>
+                <span class="jp-text">・<ruby>時間<rt>じかん</rt></ruby>は<ruby>全部<rt>ぜんぶ</rt></ruby>で<ruby>約<rt>やく</rt></ruby>30<ruby>分<rt>ぷん</rt></ruby> (クレペリン<ruby>約<rt>やく</rt></ruby>5<ruby>分<rt>ふん</rt></ruby>、<ruby>知能<rt>ちのう</rt></ruby>テスト<ruby>約<rt>やく</rt></ruby>25<ruby>分<rt>ふん</rt></ruby>)。</span>
                 <span class="id-text">Total waktu ±30 menit (Kraepelin 5 menit, Tes IQ 25 menit).</span>
             </div>
         </div>
-        <button class="btn" onclick="startKraepelin()">テストを開始する (Mulai Tes)</button>
+        <button class="btn" onclick="startKraepelin()">テストを<ruby>開始<rt>かいし</rt></ruby>する (Mulai Tes)</button>
     </div>
 
     <!-- SECTION 1: KRAEPELIN -->
     <div id="section-kraepelin">
-        <h2>① クレペリン検査 (Kraepelin Test)</h2>
+        <h2>① クレペリン<ruby>検査<rt>けんさ</rt></ruby> (Kraepelin Test)</h2>
         <div class="instructions" style="padding: 4px 8px; margin-bottom: 6px;">
             <div class="bilingual-text">
-                <span class="jp-text">・上と下を足して間に書く。上から下へ。消しゴム不可。合計も記入。</span>
+                <span class="jp-text">・<ruby>上<rt>うえ</rt></ruby>と<ruby>下<rt>した</rt></ruby>を<ruby>足<rt>た</rt></ruby>して<ruby>間<rt>あいだ</rt></ruby>に<ruby>書<rt>か</rt></ruby>く。<ruby>上<rt>うえ</rt></ruby>から<ruby>下<rt>した</rt></ruby>へ。<ruby>消<rt>け</rt></ruby>しゴム<ruby>不可<rt>ふか</rt></ruby>。<ruby>合計<rt>ごうけい</rt></ruby>も<ruby>記入<rt>きにゅう</rt></ruby>。</span>
                 <span class="id-text">Jumlahkan angka atas & bawah, tulis di tengah. Dari atas ke bawah. Tanpa hapus.</span>
             </div>
         </div>
         
         <div class="timer-container">
-            残り時間 (Sisa Waktu): <span id="timeKraepelin">05:00</span>
+            <ruby>残<rt>のこ</rt></ruby>り<ruby>時間<rt>じかん</rt></ruby> (Sisa Waktu): <span id="timeKraepelin">05:00</span>
         </div>
 
-        <!-- Tabel Kraepelin dengan Auto-Scroll ke Bawah Otomatis -->
         <div class="kraepelin-fixed-container" id="kraepelinContainer">
             <table class="paten-table" id="patenKraepelinTable">
                 <thead>
                     <tr>
-                        <th>列 1</th><th>列 2</th><th>列 3</th><th>列 4</th><th>列 5</th><th>列 6</th>
+                        <th><ruby>列<rt>れつ</rt></ruby> 1</th><th><ruby>列<rt>れつ</rt></ruby> 2</th><th><ruby>列<rt>れつ</rt></ruby> 3</th><th><ruby>列<rt>れつ</rt></ruby> 4</th><th><ruby>列<rt>れつ</rt></ruby> 5</th><th><ruby>列<rt>れつ</rt></ruby> 6</th>
                     </tr>
                 </thead>
                 <tbody id="patenTableBody">
@@ -275,25 +282,26 @@
             </table>
         </div>
 
-        <button class="btn btn-finish" onclick="finishKraepelinEarly()">次へ進む (Selesai & Lanjut Tes IQ)</button>
+        <button class="btn btn-finish" onclick="finishKraepelinEarly()"><ruby>次<rt>つぎ</rt></ruby>へ<ruby>進<rt>すす</rt></ruby>む (Selesai & Lanjut Tes IQ)</button>
     </div>
 
     <!-- SECTION 2: IQ TEST -->
     <div id="section-iq">
-        <h2>② 簡単な知能テスト (Tes IQ)</h2>
+        <h2>② <ruby>簡単<rt>かんたん</rt></ruby>な<ruby>知能<rt>ちのう</rt></ruby>テスト (Tes IQ)</h2>
         <div class="instructions" style="padding: 4px 8px; margin-bottom: 6px;">
             <div class="bilingual-text">
-                <span class="jp-text">・各問題に1つずつ答えてください。</span>
+                <span class="jp-text">・<ruby>各問題<rt>かくもんだい</rt></ruby>に1つずつ<ruby>答<rt>こた</rt></ruby>えてください。</span>
                 <span class="id-text">Jawab satu pilihan untuk setiap soal.</span>
             </div>
         </div>
         
         <div class="timer-container" style="color: #1976d2; background: #e3f2fd;">
-            残り時間 (Sisa Waktu): <span id="timeIq">25:00</span>
+            <ruby>残<rt>のこ</rt></ruby>り<ruby>時間<rt>じかん</rt></ruby> (Sisa Waktu): <span id="timeIq">25:00</span>
         </div>
 
         <div id="iq-questions-container">
-            <div class="iq-question"><p>問 1. 25 ＋ 38 はいくつですか。</p>
+            <!-- SOAL 1-10 (Lama) -->
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 1. 25 ＋ 38 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q1" value="ア"> ア) 53</label>
                     <label><input type="radio" name="q1" value="イ"> イ) 63</label>
@@ -301,7 +309,7 @@
                     <label><input type="radio" name="q1" value="エ"> エ) 62</label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 2. 100 − 45 はいくつですか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 2. 100 − 45 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q2" value="ア"> ア) 45</label>
                     <label><input type="radio" name="q2" value="イ"> イ) 55</label>
@@ -309,7 +317,7 @@
                     <label><input type="radio" name="q2" value="エ"> エ) 50</label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 3. 7 × 8 はいくつですか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 3. 7 × 8 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q3" value="ア"> ア) 54</label>
                     <label><input type="radio" name="q3" value="イ"> イ) 56</label>
@@ -317,7 +325,7 @@
                     <label><input type="radio" name="q3" value="エ"> エ) 48</label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 4. 72 ÷ 9 はいくつですか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 4. 72 ÷ 9 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q4" value="ア"> ア) 6</label>
                     <label><input type="radio" name="q4" value="イ"> イ) 7</label>
@@ -325,7 +333,7 @@
                     <label><input type="radio" name="q4" value="エ"> エ) 9</label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 5. 次の数列に入る数字はどれですか。 5, 10, 15, 20, ？</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 5. <ruby>次<rt>つぎ</rt></ruby>の<ruby>数列<rt>すうれつ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る<ruby>数字<rt>すうじ</rt></ruby>はどれですか。 5, 10, 15, 20, ？</p>
                 <div class="options">
                     <label><input type="radio" name="q5" value="ア"> ア) 21</label>
                     <label><input type="radio" name="q5" value="イ"> イ) 22</label>
@@ -333,31 +341,31 @@
                     <label><input type="radio" name="q5" value="エ"> エ) 30</label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 6. 朝9時から夕方5時（17時）まで仕事をしました。何時間働きましたか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 6. <ruby>朝<rt>あさ</rt></ruby>9<ruby>時<rt>じ</rt></ruby>から<ruby>夕方<rt>ゆうがた</rt></ruby>5<ruby>時<rt>じ</rt></ruby>（17<ruby>時<rt>じ</rt></ruby>）まで<ruby>仕事<rt>しごと</rt></ruby>をしました。<ruby>何時間<rt>なんじかん</rt></ruby><ruby>働<rt>はたら</rt></ruby>きましたか。</p>
                 <div class="options">
-                    <label><input type="radio" name="q6" value="ア"> ア) 7時間</label>
-                    <label><input type="radio" name="q6" value="イ"> イ) 8時間半</label>
-                    <label><input type="radio" name="q6" value="ウ"> ウ) 8時間</label>
-                    <label><input type="radio" name="q6" value="エ"> エ) 9時間</label>
+                    <label><input type="radio" name="q6" value="ア"> ア) 7<ruby>時間<rt>じかん</rt></ruby></label>
+                    <label><input type="radio" name="q6" value="イ"> イ) 8<ruby>時間半<rt>じかんはん</rt></ruby></label>
+                    <label><input type="radio" name="q6" value="ウ"> ウ) 8<ruby>時間<rt>じかん</rt></ruby></label>
+                    <label><input type="radio" name="q6" value="エ"> エ) 9<ruby>時間<rt>じかん</rt></ruby></label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 7. 500円を持って、320円のパンを買いました。おつりはいくらですか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 7. 500<ruby>円<rt>えん</rt></ruby>を<ruby>持<rt>も</rt></ruby>って、320<ruby>円<rt>えん</rt></ruby>のパンを<ruby>買<rt>か</rt></ruby>いました。おつりはいくらですか。</p>
                 <div class="options">
-                    <label><input type="radio" name="q7" value="ア"> ア) 120円</label>
-                    <label><input type="radio" name="q7" value="イ"> イ) 180円</label>
-                    <label><input type="radio" name="q7" value="ウ"> ウ) 280円</label>
-                    <label><input type="radio" name="q7" value="エ"> エ) 320円</label>
+                    <label><input type="radio" name="q7" value="ア"> ア) 120<ruby>円<rt>えん</rt></ruby></label>
+                    <label><input type="radio" name="q7" value="イ"> イ) 180<ruby>円<rt>えん</rt></ruby></label>
+                    <label><input type="radio" name="q7" value="ウ"> ウ) 280<ruby>円<rt>えん</rt></ruby></label>
+                    <label><input type="radio" name="q7" value="エ"> エ) 320<ruby>円<rt>えん</rt></ruby></label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 8. 月曜日の次の日は何曜日ですか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 8. <ruby>月曜日<rt>げつようび</rt></ruby>の<ruby>次<rt>つぎ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>は<ruby>何曜日<rt>なんようび</rt></ruby>ですか。</p>
                 <div class="options">
-                    <label><input type="radio" name="q8" value="ア"> ア) 日曜日</label>
-                    <label><input type="radio" name="q8" value="イ"> イ) 火曜日</label>
-                    <label><input type="radio" name="q8" value="ウ"> ウ) 水曜日</label>
-                    <label><input type="radio" name="q8" value="エ"> エ) 金曜日</label>
+                    <label><input type="radio" name="q8" value="ア"> ア) <ruby>日曜日<rt>にちようび</rt></ruby></label>
+                    <label><input type="radio" name="q8" value="イ"> イ) <ruby>火曜日<rt>かようび</rt></ruby></label>
+                    <label><input type="radio" name="q8" value="ウ"> ウ) <ruby>水曜日<rt>すいようび</rt></ruby></label>
+                    <label><input type="radio" name="q8" value="エ"> エ) <ruby>金曜日<rt>きんようび</rt></ruby></label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 9. 次の4つの数で一番大きい数はどれですか。 12, 21, 15, 9</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 9. <ruby>次<rt>つぎ</rt></ruby>の4つの<ruby>数<rt>かず</rt></ruby>で<ruby>一番大<rt>いちばんおお</rt></ruby>きい<ruby>数<rt>かず</rt></ruby>はどれですか。 12, 21, 15, 9</p>
                 <div class="options">
                     <label><input type="radio" name="q9" value="ア"> ア) 12</label>
                     <label><input type="radio" name="q9" value="イ"> イ) 21</label>
@@ -365,29 +373,111 @@
                     <label><input type="radio" name="q9" value="エ"> エ) 9</label>
                 </div>
             </div>
-            <div class="iq-question"><p>問 10. 1日に5個ずつ部品を作ります。4日で全部で何個作れますか。</p>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 10. 1<ruby>日<rt>にち</rt></ruby>に5<ruby>個<rt>こ</rt></ruby>ずつ<ruby>部品<rt>ぶひん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。4<ruby>日<rt>か</rt></ruby>で<ruby>全部<rt>ぜんぶ</rt></ruby>で<ruby>何個作<rt>なんこつく</rt></ruby>れますか。</p>
                 <div class="options">
-                    <label><input type="radio" name="q10" value="ア"> ア) 15個</label>
-                    <label><input type="radio" name="q10" value="イ"> イ) 20個</label>
-                    <label><input type="radio" name="q10" value="ウ"> ウ) 25個</label>
-                    <label><input type="radio" name="q10" value="エ"> エ) 30個</label>
+                    <label><input type="radio" name="q10" value="ア"> ア) 15<ruby>個<rt>こ</rt></ruby></label>
+                    <label><input type="radio" name="q10" value="イ"> イ) 20<ruby>個<rt>こ</rt></ruby></label>
+                    <label><input type="radio" name="q10" value="ウ"> ウ) 25<ruby>個<rt>こ</rt></ruby></label>
+                    <label><input type="radio" name="q10" value="エ"> エ) 30<ruby>個<rt>こ</rt></ruby></label>
+                </div>
+            </div>
+
+            <!-- SOAL 11-20 (Baru Ditambahkan) -->
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 11. 120 ＋ 85 はいくつですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="ア"> ア) 195</label>
+                    <label><input type="radio" name="q11" value="イ"> イ) 215</label>
+                    <label><input type="radio" name="q11" value="ウ"> ウ) 205</label>
+                    <label><input type="radio" name="q11" value="エ"> エ) 185</label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 12. 15 × 4 はいくつですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="ア"> ア) 60</label>
+                    <label><input type="radio" name="q12" value="イ"> イ) 50</label>
+                    <label><input type="radio" name="q12" value="ウ"> ウ) 70</label>
+                    <label><input type="radio" name="q12" value="エ"> エ) 45</label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 13. 1メートルは<ruby>何<rt>なん</rt></ruby>センチメートルですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="ア"> ア) 10</label>
+                    <label><input type="radio" name="q13" value="イ"> イ) 100</label>
+                    <label><input type="radio" name="q13" value="ウ"> ウ) 1000</label>
+                    <label><input type="radio" name="q13" value="エ"> エ) 500</label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 14. <ruby>今日<rt>きょう</rt></ruby>が<ruby>水曜日<rt>すいようび</rt></ruby>なら、<ruby>明後日<rt>あさって</rt></ruby>（あさって）は<ruby>何曜日<rt>なんようび</rt></ruby>ですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="ア"> ア) <ruby>木曜日<rt>もくようび</rt></ruby></label>
+                    <label><input type="radio" name="q14" value="イ"> イ) <ruby>土曜日<rt>どようび</rt></ruby></label>
+                    <label><input type="radio" name="q14" value="ウ"> ウ) <ruby>日曜日<rt>にちようび</rt></ruby></label>
+                    <label><input type="radio" name="q14" value="エ"> エ) <ruby>金曜日<rt>きんようび</rt></ruby></label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 15. 1000<ruby>円札<rt>えんさつ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>して、650<ruby>円<rt>えん</rt></ruby>の<ruby>弁当<rt>べんとう</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。おつりはいくらですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="ア"> ア) 450<ruby>円<rt>えん</rt></ruby></label>
+                    <label><input type="radio" name="q15" value="イ"> イ) 350<ruby>円<rt>えん</rt></ruby></label>
+                    <label><input type="radio" name="q15" value="ウ"> ウ) 250<ruby>円<rt>えん</rt></ruby></label>
+                    <label><input type="radio" name="q15" value="エ"> エ) 300<ruby>円<rt>えん</rt></ruby></label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 16. <ruby>次<rt>つぎ</rt></ruby>の<ruby>数列<rt>すうれつ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る<ruby>数字<rt>すうじ</rt></ruby>はどれですか。 2, 4, 8, 16, ？</p>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="ア"> ア) 24</label>
+                    <label><input type="radio" name="q16" value="イ"> イ) 30</label>
+                    <label><input type="radio" name="q16" value="ウ"> ウ) 32</label>
+                    <label><input type="radio" name="q16" value="エ"> エ) 64</label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 17. 60 ÷ 5 はいくつですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="ア"> ア) 12</label>
+                    <label><input type="radio" name="q17" value="イ"> イ) 15</label>
+                    <label><input type="radio" name="q17" value="ウ"> ウ) 10</label>
+                    <label><input type="radio" name="q17" value="エ"> エ) 14</label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 18. 1<ruby>時間<rt>じかん</rt></ruby>は<ruby>何分<rt>なんぷん</rt></ruby>ですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="ア"> ア) 100<ruby>分<rt>ふん</rt></ruby></label>
+                    <label><input type="radio" name="q18" value="イ"> イ) 30<ruby>分<rt>ふん</rt></ruby></label>
+                    <label><input type="radio" name="q18" value="ウ"> ウ) 120<ruby>分<rt>ふん</rt></ruby></label>
+                    <label><input type="radio" name="q18" value="エ"> エ) 60<ruby>分<rt>ふん</rt></ruby></label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 19. <ruby>次<rt>つぎ</rt></ruby>の4つの<ruby>数<rt>かず</rt></ruby>で<ruby>一番小<rt>いちばんちい</rt></ruby>さい<ruby>数<rt>かず</rt></ruby>はどれですか。 0.5, 0.25, 0.1, 0.05</p>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="ア"> ア) 0.1</label>
+                    <label><input type="radio" name="q19" value="イ"> イ) 0.05</label>
+                    <label><input type="radio" name="q19" value="ウ"> ウ) 0.25</label>
+                    <label><input type="radio" name="q19" value="エ"> エ) 0.5</label>
+                </div>
+            </div>
+            <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 20. 1ダースは12<ruby>個<rt>こ</rt></ruby>です。3ダースは<ruby>何個<rt>なんこ</rt></ruby>ですか。</p>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="ア"> ア) 30<ruby>個<rt>こ</rt></ruby></label>
+                    <label><input type="radio" name="q20" value="イ"> イ) 24<ruby>個<rt>こ</rt></ruby></label>
+                    <label><input type="radio" name="q20" value="ウ"> ウ) 36<ruby>個<rt>こ</rt></ruby></label>
+                    <label><input type="radio" name="q20" value="エ"> エ) 48<ruby>個<rt>こ</rt></ruby></label>
                 </div>
             </div>
         </div>
 
-        <button class="btn btn-next" onclick="finishAll()">テストを終了する (Kumpulkan Jawaban)</button>
+        <button class="btn btn-next" onclick="finishAll()">テストを<ruby>終了<rt>しゅうりょう</rt></ruby>する (Kumpulkan Jawaban)</button>
     </div>
 
     <!-- SECTION 3: HASIL -->
     <div id="section-result">
-        <h2>テスト終了 (Tes Selesai)</h2>
+        <h2>テスト<ruby>終了<rt>しゅうりょう</rt></ruby> (Tes Selesai)</h2>
         <div class="candidate-info-box">
-            <p style="margin:0 0 3px 0;"><strong>氏名 / Nama:</strong> <span id="resName"></span></p>
-            <p style="margin:0;"><strong>受験番号 / No. Ujian:</strong> <span id="resNumber"></span></p>
+            <p style="margin:0 0 3px 0;"><strong><ruby>氏名<rt>しめい</rt></ruby> / Nama:</strong> <span id="resName"></span></p>
+            <p style="margin:0;"><strong><ruby>受験番号<rt>じゅけんばんごう</rt></ruby> / No. Ujian:</strong> <span id="resNumber"></span></p>
         </div>
         <div class="result-box" id="result-kraepelin"></div>
         <div class="result-box" id="result-iq"></div>
-        <p style="text-align:center; margin-top:10px; font-size: 0.85em; color: #666;">面接官にこの画面を見せてください。</p>
+        <p style="text-align:center; margin-top:10px; font-size: 0.85em; color: #666;"><ruby>面接官<rt>めんせつかん</rt></ruby>にこの<ruby>画面<rt>がめん</rt></ruby>を<ruby>見<rt>み</rt></ruby>せてください。</p>
     </div>
 
 </div>
@@ -402,9 +492,12 @@
         [4, 9, 7, 6, 1, 5, 2, 8, 3, 9, 4, 8, 1, 2, 7, 6, 2, 5, 9, 3]
     ];
 
+    // Kunci Jawaban Diperbarui untuk 20 Soal
     const iqAnswers = {
         q1: 'イ', q2: 'イ', q3: 'イ', q4: 'ウ', q5: 'ウ', 
-        q6: 'ウ', q7: 'イ', q8: 'イ', q9: 'イ', q10: 'イ'
+        q6: 'ウ', q7: 'イ', q8: 'イ', q9: 'イ', q10: 'イ',
+        q11: 'ウ', q12: 'ア', q13: 'イ', q14: 'エ', q15: 'イ',
+        q16: 'ウ', q17: 'ア', q18: 'エ', q19: 'イ', q20: 'ウ'
     };
 
     let timerKraepelin, timerIq;
@@ -450,17 +543,15 @@
                     input.className = 'paten-input';
                     input.id = `ans_${col}_${i}`;
                     
-                    // Auto-focus ke bawah (0.8 detik) + Auto-Scroll ke elemen berikutnya agar selalu terlihat
                     input.addEventListener('input', function() {
                         if (this.value.length >= 1) {
                             setTimeout(() => {
                                 let nextInput = document.getElementById(`ans_${col}_${i + 1}`);
                                 if (nextInput) {
                                     nextInput.focus();
-                                    // Menggulirkan kontainer secara otomatis agar input berikutnya langsung tampak di layar
                                     nextInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                 }
-                            }, 800); // Jeda 800ms (0.8 detik)
+                            }, 800);
                         }
                     });
 
@@ -555,26 +646,28 @@
     }
 
     function showFinalDashboard() {
-        let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (速い)</span>' : 
-                   (kraepelinScore.speed >= 5 ? '<span class="eval-badge eval-B">B (標準)</span>' : '<span class="eval-badge eval-C">C (遅い)</span>');
+        let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (<ruby>速<rt>はや</rt></ruby>い)</span>' : 
+                   (kraepelinScore.speed >= 5 ? '<span class="eval-badge eval-B">B (<ruby>標準<rt>ひょうじゅん</rt></ruby>)</span>' : '<span class="eval-badge eval-C">C (<ruby>遅<rt>おそ</rt></ruby>い)</span>');
         
         document.getElementById('result-kraepelin').innerHTML = `
-            <h3 style="margin-top:0;">① クレペリン検査結果</h3>
-            <p><strong>正答数:</strong> ${kraepelinScore.correct} | <strong>正確率:</strong> ${kraepelinScore.accuracy}% | <strong>速度:</strong> ${kraepelinScore.speed} 問/分 &nbsp; ${kEval}</p>
+            <h3 style="margin-top:0;">① クレペリン<ruby>検査結果<rt>けんさけっか</rt></ruby></h3>
+            <p><strong><ruby>正答数<rt>せいとうすう</rt></ruby>:</strong> ${kraepelinScore.correct} | <strong><ruby>正確率<rt>せいかくりつ</rt></ruby>:</strong> ${kraepelinScore.accuracy}% | <strong><ruby>速度<rt>そくど</rt></ruby>:</strong> ${kraepelinScore.speed} <ruby>問<rt>もん</rt></ruby>/<ruby>分<rt>ふん</rt></ruby> &nbsp; ${kEval}</p>
         `;
 
         let iqCorrect = 0;
-        for (let i = 1; i <= 10; i++) {
+        // Loop disesuaikan untuk 20 soal
+        for (let i = 1; i <= 20; i++) {
             let selected = document.querySelector(`input[name="q${i}"]:checked`);
             if (selected && selected.value === iqAnswers[`q${i}`]) iqCorrect++;
         }
         
-        let iqEvalBadge = iqCorrect >= 9 ? '<span class="eval-badge eval-A">評価 A (優秀)</span>' : 
-                          (iqCorrect >= 6 ? '<span class="eval-badge eval-B">評価 B (標準)</span>' : '<span class="eval-badge eval-C">評価 C (要支援)</span>');
+        // Logika evaluasi (nilai disesuaikan untuk skala 20 soal)
+        let iqEvalBadge = iqCorrect >= 17 ? '<span class="eval-badge eval-A"><ruby>評価<rt>ひょうか</rt></ruby> A (<ruby>優秀<rt>ゆうしゅう</rt></ruby>)</span>' : 
+                          (iqCorrect >= 12 ? '<span class="eval-badge eval-B"><ruby>評価<rt>ひょうか</rt></ruby> B (<ruby>標準<rt>ひょうじゅん</rt></ruby>)</span>' : '<span class="eval-badge eval-C"><ruby>評価<rt>ひょうか</rt></ruby> C (<ruby>要支援<rt>ようしえん</rt></ruby>)</span>');
 
         document.getElementById('result-iq').innerHTML = `
-            <h3 style="margin-top:0;">② 知能テスト結果</h3>
-            <p><strong>正答数:</strong> 10問中 ${iqCorrect} 問 &nbsp; ${iqEvalBadge}</p>
+            <h3 style="margin-top:0;">② <ruby>知能<rt>ちのう</rt></ruby>テスト<ruby>結果<rt>けっか</rt></ruby></h3>
+            <p><strong><ruby>正答数<rt>せいとうすう</rt></ruby>:</strong> 20<ruby>問中<rt>もんちゅう</rt></ruby> ${iqCorrect} <ruby>問<rt>もん</rt></ruby> &nbsp; ${iqEvalBadge}</p>
         `;
     }
 </script>
