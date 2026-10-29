@@ -639,11 +639,10 @@
         document.getElementById('section-result').style.display = 'block';
         window.scrollTo(0, 0);
         
-        // Panggil fungsi utama yang sudah disatukan
+        // Panggil fungsi utama
         showFinalDashboard();
     }
 
-    // FUNGSI INI TELAH DIGABUNG DAN DIBERSIHKAN
     function showFinalDashboard() {
         // 1. Tampilkan Hasil Kraepelin
         let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (<ruby>速<rt>はや</rt></ruby>い)</span>' : 
@@ -677,18 +676,20 @@
             hasilIq: `Benar: ${iqCorrect} dari 20 soal`
         };
 
-        const scriptURL = 'https://script.google.com/a/macros/zero2oneindonesia.com/s/AKfycbz7uc8EAnltBtvx6M6gYdETGWYO0OhuCVoCSiSkW8nLYyzFXYlLdxUW4IXNL_M-0S025g/exec'; 
+        // INI LINK TERBARU YANG BENAR
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzflOLz6l-mVb9Q2V8Il5T286Le_ejcvWZXUIX1HbCNz77GCFaj_F2JjDPusqqMRtdWQA/exec'; 
+
         fetch(scriptURL, {
             method: 'POST',
             mode: 'no-cors', 
             headers: {
-                'Content-Type': 'text/plain' // <--- INI KUNCI UTAMANYA
+                'Content-Type': 'text/plain' 
             },
             body: JSON.stringify(dataHasil)
         })
         .then(() => {
             console.log('Perintah kirim email telah dieksekusi.');
-            alert('Hasil tes berhasil dikirim ke HRD!'); // Memunculkan notif sukses di layar
+            alert('Hasil tes berhasil dikirim ke HRD!');
         })
         .catch(error => console.error('Error saat mengirim email:', error));
     }
