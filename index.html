@@ -671,11 +671,6 @@
         `;
     }
     function showFinalDashboard() {
-    // ... (kode HTML yang sudah ada untuk menampilkan badge & hasil) ...
-
-    // --- TAMBAHKAN KODE INI DI BAGIAN BAWAH FUNGSI showFinalDashboard ---
-    
-    // Siapkan data untuk dikirim
     let dataHasil = {
         nama: document.getElementById('candidateName').value.trim(),
         noUjian: document.getElementById('candidateNumber').value.trim(),
@@ -683,8 +678,7 @@
         hasilIq: `Benar: ${iqCorrect} dari 20 soal`
     };
 
-    // Ganti URL_WEB_APP_ANDA dengan URL yang disalin dari Google Apps Script
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxBCp1I_Ii0Eug-i6nJgqkyIvXs_PU9Uyv3FwZWvslj/dev'; 
+    const scriptURL = 'https://script.google.com/a/macros/zero2oneindonesia.com/s/AKfycbz7uc8EAnltBtvx6M6gYdETGWYO0OhuCVoCSiSkW8nLYyzFXYlLdxUW4IXNL_M-0S025g/exec'; 
 
     fetch(scriptURL, {
         method: 'POST',
