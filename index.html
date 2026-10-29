@@ -300,7 +300,6 @@
         </div>
 
         <div id="iq-questions-container">
-            <!-- SOAL 1-10 (Lama) -->
             <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 1. 25 ＋ 38 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q1" value="ア"> ア) 53</label>
@@ -381,8 +380,6 @@
                     <label><input type="radio" name="q10" value="エ"> エ) 30<ruby>個<rt>こ</rt></ruby></label>
                 </div>
             </div>
-
-            <!-- SOAL 11-20 (Baru Ditambahkan) -->
             <div class="iq-question"><p><ruby>問<rt>とい</rt></ruby> 11. 120 ＋ 85 はいくつですか。</p>
                 <div class="options">
                     <label><input type="radio" name="q11" value="ア"> ア) 195</label>
@@ -492,7 +489,6 @@
         [4, 9, 7, 6, 1, 5, 2, 8, 3, 9, 4, 8, 1, 2, 7, 6, 2, 5, 9, 3]
     ];
 
-    // Kunci Jawaban Diperbarui untuk 20 Soal
     const iqAnswers = {
         q1: 'イ', q2: 'イ', q3: 'イ', q4: 'ウ', q5: 'ウ', 
         q6: 'ウ', q7: 'イ', q8: 'イ', q9: 'イ', q10: 'イ',
@@ -642,10 +638,14 @@
         document.getElementById('section-iq').style.display = 'none';
         document.getElementById('section-result').style.display = 'block';
         window.scrollTo(0, 0);
+        
+        // Panggil fungsi utama yang sudah disatukan
         showFinalDashboard();
     }
 
+    // FUNGSI INI TELAH DIGABUNG DAN DIBERSIHKAN
     function showFinalDashboard() {
+        // 1. Tampilkan Hasil Kraepelin
         let kEval = kraepelinScore.speed >= 8 ? '<span class="eval-badge eval-A">A (<ruby>速<rt>はや</rt></ruby>い)</span>' : 
                    (kraepelinScore.speed >= 5 ? '<span class="eval-badge eval-B">B (<ruby>標準<rt>ひょうじゅん</rt></ruby>)</span>' : '<span class="eval-badge eval-C">C (<ruby>遅<rt>おそ</rt></ruby>い)</span>');
         
@@ -654,14 +654,13 @@
             <p><strong><ruby>正答数<rt>せいとうすう</rt></ruby>:</strong> ${kraepelinScore.correct} | <strong><ruby>正確率<rt>せいかくりつ</rt></ruby>:</strong> ${kraepelinScore.accuracy}% | <strong><ruby>速度<rt>そくど</rt></ruby>:</strong> ${kraepelinScore.speed} <ruby>問<rt>もん</rt></ruby>/<ruby>分<rt>ふん</rt></ruby> &nbsp; ${kEval}</p>
         `;
 
+        // 2. Hitung & Tampilkan Hasil IQ
         let iqCorrect = 0;
-        // Loop disesuaikan untuk 20 soal
         for (let i = 1; i <= 20; i++) {
             let selected = document.querySelector(`input[name="q${i}"]:checked`);
             if (selected && selected.value === iqAnswers[`q${i}`]) iqCorrect++;
         }
         
-        // Logika evaluasi (nilai disesuaikan untuk skala 20 soal)
         let iqEvalBadge = iqCorrect >= 17 ? '<span class="eval-badge eval-A"><ruby>評価<rt>ひょうか</rt></ruby> A (<ruby>優秀<rt>ゆうしゅう</rt></ruby>)</span>' : 
                           (iqCorrect >= 12 ? '<span class="eval-badge eval-B"><ruby>評価<rt>ひょうか</rt></ruby> B (<ruby>標準<rt>ひょうじゅん</rt></ruby>)</span>' : '<span class="eval-badge eval-C"><ruby>評価<rt>ひょうか</rt></ruby> C (<ruby>要支援<rt>ようしえん</rt></ruby>)</span>');
 
@@ -669,28 +668,31 @@
             <h3 style="margin-top:0;">② <ruby>知能<rt>ちのう</rt></ruby>テスト<ruby>結果<rt>けっか</rt></ruby></h3>
             <p><strong><ruby>正答数<rt>せいとうすう</rt></ruby>:</strong> 20<ruby>問中<rt>もんちゅう</rt></ruby> ${iqCorrect} <ruby>問<rt>もん</rt></ruby> &nbsp; ${iqEvalBadge}</p>
         `;
+
+        // 3. Persiapkan Data & Kirim Email via Apps Script
+        let dataHasil = {
+            nama: document.getElementById('candidateName').value.trim(),
+            noUjian: document.getElementById('candidateNumber').value.trim(),
+            hasilKraepelin: `Benar: ${kraepelinScore.correct} | Akurasi: ${kraepelinScore.accuracy}% | Kecepatan: ${kraepelinScore.speed} soal/menit`,
+            hasilIq: `Benar: ${iqCorrect} dari 20 soal`
+        };
+
+        const scriptURL = 'https://script.google.com/a/macros/zero2oneindonesia.com/s/AKfycbz7uc8EAnltBtvx6M6gYdETGWYO0OhuCVoCSiSkW8nLYyzFXYlLdxUW4IXNL_M-0S025g/exec'; 
+
+        // Tambahkan mode: 'no-cors' agar tidak diblokir browser
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataHasil)
+        })
+        .then(() => {
+            console.log('Perintah kirim email telah dieksekusi (no-cors mode).');
+        })
+        .catch(error => console.error('Error saat mengirim email:', error));
     }
-    function showFinalDashboard() {
-    let dataHasil = {
-        nama: document.getElementById('candidateName').value.trim(),
-        noUjian: document.getElementById('candidateNumber').value.trim(),
-        hasilKraepelin: `Benar: ${kraepelinScore.correct} | Akurasi: ${kraepelinScore.accuracy}% | Kecepatan: ${kraepelinScore.speed} soal/menit`,
-        hasilIq: `Benar: ${iqCorrect} dari 20 soal`
-    };
-
-    const scriptURL = 'https://script.google.com/a/macros/zero2oneindonesia.com/s/AKfycbz7uc8EAnltBtvx6M6gYdETGWYO0OhuCVoCSiSkW8nLYyzFXYlLdxUW4IXNL_M-0S025g/exec'; 
-
-    fetch(scriptURL, {
-        method: 'POST',
-        body: JSON.stringify(dataHasil)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Hasil berhasil dikirim ke email!');
-        // Opsional: Tambahkan notifikasi sukses di layar untuk kandidat
-    })
-    .catch(error => console.error('Error saat mengirim email:', error));
-}
 </script>
 
 </body>
