@@ -670,6 +670,33 @@
             <p><strong><ruby>正答数<rt>せいとうすう</rt></ruby>:</strong> 20<ruby>問中<rt>もんちゅう</rt></ruby> ${iqCorrect} <ruby>問<rt>もん</rt></ruby> &nbsp; ${iqEvalBadge}</p>
         `;
     }
+    function showFinalDashboard() {
+    // ... (kode HTML yang sudah ada untuk menampilkan badge & hasil) ...
+
+    // --- TAMBAHKAN KODE INI DI BAGIAN BAWAH FUNGSI showFinalDashboard ---
+    
+    // Siapkan data untuk dikirim
+    let dataHasil = {
+        nama: document.getElementById('candidateName').value.trim(),
+        noUjian: document.getElementById('candidateNumber').value.trim(),
+        hasilKraepelin: `Benar: ${kraepelinScore.correct} | Akurasi: ${kraepelinScore.accuracy}% | Kecepatan: ${kraepelinScore.speed} soal/menit`,
+        hasilIq: `Benar: ${iqCorrect} dari 20 soal`
+    };
+
+    // Ganti URL_WEB_APP_ANDA dengan URL yang disalin dari Google Apps Script
+    const scriptURL = 'URL_WEB_APP_ANDA_DISINI'; 
+
+    fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(dataHasil)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Hasil berhasil dikirim ke email!');
+        // Opsional: Tambahkan notifikasi sukses di layar untuk kandidat
+    })
+    .catch(error => console.error('Error saat mengirim email:', error));
+}
 </script>
 
 </body>
