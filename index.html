@@ -678,18 +678,17 @@
         };
 
         const scriptURL = 'https://script.google.com/a/macros/zero2oneindonesia.com/s/AKfycbz7uc8EAnltBtvx6M6gYdETGWYO0OhuCVoCSiSkW8nLYyzFXYlLdxUW4IXNL_M-0S025g/exec'; 
-
-        // Tambahkan mode: 'no-cors' agar tidak diblokir browser
         fetch(scriptURL, {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'no-cors', 
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'text/plain' // <--- INI KUNCI UTAMANYA
             },
             body: JSON.stringify(dataHasil)
         })
         .then(() => {
-            console.log('Perintah kirim email telah dieksekusi (no-cors mode).');
+            console.log('Perintah kirim email telah dieksekusi.');
+            alert('Hasil tes berhasil dikirim ke HRD!'); // Memunculkan notif sukses di layar
         })
         .catch(error => console.error('Error saat mengirim email:', error));
     }
