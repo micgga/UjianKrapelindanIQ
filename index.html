@@ -639,7 +639,6 @@
         document.getElementById('section-result').style.display = 'block';
         window.scrollTo(0, 0);
         
-        // Panggil fungsi utama
         showFinalDashboard();
     }
 
@@ -668,16 +667,17 @@
             <p><strong><ruby>正答数<rt>せいとうすう</rt></ruby>:</strong> 20<ruby>問中<rt>もんちゅう</rt></ruby> ${iqCorrect} <ruby>問<rt>もん</rt></ruby> &nbsp; ${iqEvalBadge}</p>
         `;
 
-        // 3. Persiapkan Data & Kirim Email via Apps Script
+        // 3. Persiapkan Data & Kirim ke Spreadsheet & Email
         let dataHasil = {
             nama: document.getElementById('candidateName').value.trim(),
             noUjian: document.getElementById('candidateNumber').value.trim(),
+            iqScore: iqCorrect, 
+            kraepelinSpeed: parseFloat(kraepelinScore.speed), 
             hasilKraepelin: `Benar: ${kraepelinScore.correct} | Akurasi: ${kraepelinScore.accuracy}% | Kecepatan: ${kraepelinScore.speed} soal/menit`,
             hasilIq: `Benar: ${iqCorrect} dari 20 soal`
         };
 
-        // INI LINK TERBARU YANG BENAR
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzflOLz6l-mVb9Q2V8Il5T286Le_ejcvWZXUIX1HbCNz77GCFaj_F2JjDPusqqMRtdWQA/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxcbgxlLfMHgp0CvAoq11sLjVkbG9dU_jXd5aGTzAY67M5W5XMpPU0L9zuKJyxufgoZ/exec'; 
 
         fetch(scriptURL, {
             method: 'POST',
@@ -688,10 +688,10 @@
             body: JSON.stringify(dataHasil)
         })
         .then(() => {
-            console.log('Perintah kirim email telah dieksekusi.');
-            alert('Hasil tes berhasil dikirim ke Admin LPK Taiju!');
+            console.log('Data berhasil dikirim ke Spreadsheet.');
+            alert('Hasil tes berhasil disimpan dan di-ranking secara otomatis!');
         })
-        .catch(error => console.error('Error saat mengirim email:', error));
+        .catch(error => console.error('Error saat mengirim:', error));
     }
 </script>
 
